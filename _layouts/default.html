@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ site.description }}">
+
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+    {% include google-analytics.html %}
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="wrapper">
+        <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    </div>
+</header>
+
+<div class="page-content">
+    <div class="wrapper">
+        <article class="post-content">
+            {{ site.description }}
+        </article>
+    </div>
+
+    <div style="padding-top: 45px;">
+        <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="padding-bottom: 20px;"
+                src="https://maps.google.ru/maps?f=q&source=s_q&hl=ru&geocode=&q=%D0%9A%D0%94-%D0%95%D0%B2%D1%80%D0%BE%D0%A2%D1%80%D0%B0%D0%BD%D1%81&aq=&sll=54.4397,22.000122&sspn=1.464734,4.22699&t=m&ie=UTF8&hq=%D0%9A%D0%94-%D0%95%D0%B2%D1%80%D0%BE%D0%A2%D1%80%D0%B0%D0%BD%D1%81&hnear=&cid=7770177644596953058&ll=54.6972,20.522804&spn=0.01736,0.042915&z=14&iwloc=near&output=embed">
+        </iframe>
+    </div>
+    <div class="wrapper">
+            <div class="inline col-1">
+                Телефон / факс: <b>{{ site.phone_number }}</b><br/>
+                {{ site.address }}
+            </div>
+            <div class="inline col-1">
+                E-Mail: <a href="mailto:{{ site.email }}">{{ site.email }}</a><br/>
+                Skype: <b>{{ site.skype }}</b>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
